@@ -48,6 +48,11 @@ class JobService extends ChangeNotifier {
     notifyListeners();
   }
 
+  void addJobs(List<Job> jobs) {
+    _jobs.addAll(jobs);
+    notifyListeners();
+  }
+
   void removeJob(String id) {
     _jobs.removeWhere((job) => job.id == id);
     notifyListeners();
